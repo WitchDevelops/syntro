@@ -1,5 +1,16 @@
 @import url(fontawesome-all.min.css);
-@import url("https://fonts.googleapis.com/css?family=Roboto:400,700");
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@font-face {
+  font-family: Blanka;
+  src: url(../fonts/Blanka-Regular.otf);
+}
+
+:root {
+  --off-black: #161f31;
+  --off-white: #EEF6F6;
+  --turquoise: #68edcb;
+  --green: #c1ff72;
+}
 /*
 	Eventually by HTML5 UP
 	html5up.net | @ajlkn
@@ -86,7 +97,9 @@ html, body {
       height: auto;
       min-height: 100%; } }
 
-body {
+
+
+      body {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
@@ -99,7 +112,7 @@ body {
   -webkit-justify-content: center;
   -ms-justify-content: center;
   justify-content: center;
-  background-color: #000;
+background-image: url(../../images/atoms.jpg);
   padding: 6em 4em 4em 4em; }
   body.is-preload *, body.is-preload *:before, body.is-preload *:after {
     -moz-animation: none !important;
@@ -113,6 +126,17 @@ body {
   body > * {
     position: relative;
     z-index: 2; }
+
+    body::before {
+      content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-color: rgba(22,31,49, 0.5);
+    }
+
   @media screen and (max-width: 1680px) {
     body {
       padding: 6em 3.5em 3.5em 3.5em; } }
@@ -230,7 +254,7 @@ body {
 /* Type */
 body, input, select, textarea {
   color: rgba(255, 255, 255, 0.75);
-  font-family: "Roboto", sans-serif;
+  font-family: "Lexend deca", sans-serif;
   font-size: 16pt;
   font-weight: 400;
   letter-spacing: -0.01em;
@@ -275,7 +299,7 @@ p {
   margin: 0 0 2em 0; }
 
 h1, h2, h3, h4, h5, h6 {
-  color: #fff;
+  color: var(--turquoise);
   font-weight: 700;
   line-height: 1em;
   margin: 0 0 1em 0; }
@@ -284,9 +308,14 @@ h1, h2, h3, h4, h5, h6 {
     text-decoration: none; }
 
 h1 {
+  font-family: Blanka;
   font-size: 2.5em;
-  line-height: 1.25em; }
-
+  line-height: 1.25em;
+  letter-spacing: 0.15em;
+ }
+h1 span {
+  color: var(--green);
+}
 h2 {
   font-size: 1.75em;
   line-height: 1.5em; }
@@ -317,22 +346,22 @@ sup {
   position: relative;
   top: -0.5em; }
 
-blockquote {
+/* blockquote {
   border-left: solid 8px rgba(255, 255, 255, 0.35);
   font-style: italic;
   margin: 0 0 2em 0;
-  padding: 0.5em 0 0.5em 2em; }
+  padding: 0.5em 0 0.5em 2em; } */
 
-code {
+/* code {
   background: rgba(255, 255, 255, 0.125);
   border-radius: 6px;
   border: solid 2px rgba(255, 255, 255, 0.35);
   font-family: "Courier New", monospace;
   font-size: 0.9em;
   margin: 0 0.25em;
-  padding: 0.25em 0.65em; }
+  padding: 0.25em 0.65em; } */
 
-pre {
+/* pre {
   -webkit-overflow-scrolling: touch;
   font-family: "Courier New", monospace;
   font-size: 0.9em;
@@ -341,14 +370,14 @@ pre {
     display: block;
     line-height: 1.75em;
     padding: 1em 1.5em;
-    overflow-x: auto; }
+    overflow-x: auto; } */
 
-hr {
+/* hr {
   border: 0;
   border-bottom: solid 2px rgba(255, 255, 255, 0.35);
   margin: 2em 0; }
   hr.major {
-    margin: 3em 0; }
+    margin: 3em 0; } */
 
 /* Section/Article */
 section.special, article.special {
@@ -488,7 +517,7 @@ form {
         content: '\f119'; }
 
 label {
-  color: #fff;
+  color: var(--off-white);
   display: block;
   font-size: 0.9em;
   font-weight: 700;
@@ -604,10 +633,10 @@ textarea {
     -webkit-animation: focus 0.1s;
     -ms-animation: focus 0.1s;
     animation: focus 0.1s;
-    background-color: rgba(255, 255, 255, 0.125);
-    border-color: #1cb495; }
+    background-color: rgba(22, 31, 49, 0.125);
+    border-color: var(--turquoise); }
 
-select {
+/* select {
   background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' preserveAspectRatio='none' viewBox='0 0 40 40'%3E%3Cpath d='M9.4,12.3l10.4,10.4l10.4-10.4c0.2-0.2,0.5-0.4,0.9-0.4c0.3,0,0.6,0.1,0.9,0.4l3.3,3.3c0.2,0.2,0.4,0.5,0.4,0.9 c0,0.4-0.1,0.6-0.4,0.9L20.7,31.9c-0.2,0.2-0.5,0.4-0.9,0.4c-0.3,0-0.6-0.1-0.9-0.4L4.3,17.3c-0.2-0.2-0.4-0.5-0.4-0.9 c0-0.4,0.1-0.6,0.4-0.9l3.3-3.3c0.2-0.2,0.5-0.4,0.9-0.4S9.1,12.1,9.4,12.3z' fill='rgba(255, 255, 255, 0.35)' /%3E%3C/svg%3E");
   background-size: 1.25rem;
   background-repeat: no-repeat;
@@ -621,7 +650,7 @@ select {
   select:focus::-ms-value {
     background-color: transparent; }
   select::-ms-expand {
-    display: none; }
+    display: none; } */
 
 input[type="text"],
 input[type="password"],
@@ -632,7 +661,7 @@ select {
 textarea {
   padding: 0.75em 1em; }
 
-input[type="checkbox"],
+/* input[type="checkbox"],
 input[type="radio"] {
   -moz-appearance: none;
   -webkit-appearance: none;
@@ -697,9 +726,9 @@ input[type="checkbox"] + label:before {
   border-radius: 6px; }
 
 input[type="radio"] + label:before {
-  border-radius: 100%; }
+  border-radius: 100%; } */
 
-::-webkit-input-placeholder {
+/* ::-webkit-input-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
   opacity: 1.0; }
 
@@ -717,7 +746,7 @@ input[type="radio"] + label:before {
 
 .formerize-placeholder {
   color: rgba(255, 255, 255, 0.5) !important;
-  opacity: 1.0; }
+  opacity: 1.0; } */
 
 /* Button */
 input[type="submit"],
@@ -733,10 +762,10 @@ button,
   -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
   -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
   transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out, opacity 0.2s ease-in-out;
-  background-color: #1cb495;
+  background-color: var(--turquoise);
   border-radius: 6px;
   border: 0;
-  color: #ffffff !important;
+  color: var(--off-black) !important;
   cursor: pointer;
   display: inline-block;
   font-weight: 700;
@@ -799,33 +828,33 @@ button,
     margin: 0 0 1em 0; } }
 
 /* Signup Form */
-#signup-form {
+#mc-embedded-subscribe-form {
   display: -moz-flex;
   display: -webkit-flex;
   display: -ms-flex;
   display: flex;
   position: relative; }
-  #signup-form input[type="text"],
-  #signup-form input[type="password"],
-  #signup-form input[type="email"] {
+  #mc-embedded-subscribe-form input[type="text"],
+  #mc-embedded-subscribe-form input[type="password"],
+  #mc-embedded-subscribe-form input[type="email"] {
     width: 18em; }
-  #signup-form > * {
+  #mc-embedded-subscribe-form > * {
     margin: 0 0 0 1em; }
-  #signup-form > :first-child {
+  #mc-embedded-subscribe-form > :first-child {
     margin: 0 0 0 0; }
   @media screen and (max-width: 480px) {
-    #signup-form {
+    #mc-embedded-subscribe-form {
       -moz-flex-direction: column;
       -webkit-flex-direction: column;
       -ms-flex-direction: column;
       flex-direction: column; }
-      #signup-form input[type="type"],
-      #signup-form input[type="password"],
-      #signup-form input[type="email"] {
+      #mc-embedded-subscribe-form input[type="type"],
+      #mc-embedded-subscribe-form input[type="password"],
+      #mc-embedded-subscribe-form input[type="email"] {
         width: 100%; }
-      #signup-form > * {
+      #mc-embedded-subscribe-form > * {
         margin: 1.25em 0 0 0; }
-      #signup-form .message {
+      #mc-embedded-subscribe-form .message {
         bottom: -1.5em;
         font-size: 0.9em;
         height: 1em;
