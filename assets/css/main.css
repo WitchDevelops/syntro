@@ -2,8 +2,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @font-face {
-  font-family: Blanka;
-  src: url(../fonts/Blanka-Regular.otf);
+  font-family: 'Blanka';
+  src: url('../webfonts/blanka-regular-webfont.woff2') format('woff2'),
+       url('../webfonts/blanka-regular-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+
 }
 
 :root {
@@ -230,6 +234,7 @@ body {
   -ms-justify-content: center;
   justify-content: center;
   background-image: url(../../images/atoms.jpg);
+  background-size: cover;
   padding: 6em 4em 4em 4em;
 }
 
@@ -258,7 +263,7 @@ body::before {
   right: 0px;
   bottom: 0px;
   left: 0px;
-  background-color: rgba(22, 31, 49, 0.5);
+  background-color: rgba(22, 31, 49, 0.8);
 }
 
 @media screen and (max-width: 1680px) {
@@ -534,7 +539,7 @@ h6 a {
 
 h1 {
   font-family: Blanka;
-  font-size: 2.5em;
+  font-size: 4.5em;
   line-height: 1.25em;
   letter-spacing: 0.15em;
 }
@@ -620,7 +625,8 @@ article.special {
 }
 
 header p {
-  color: rgba(255, 255, 255, 0.5);
+  /* color: rgba(255, 255, 255, 0.5); */
+  color: var(--off-white);
   position: relative;
   margin: 0 0 1.5em 0;
 }
@@ -742,6 +748,10 @@ ul.icons li .icon:before {
 
 ul.icons li a {
   color: inherit;
+}
+
+main {
+  /* outline: 6px solid red; */
 }
 
 /* Form */
@@ -953,6 +963,11 @@ textarea:focus {
   animation: focus 0.1s;
   background-color: rgba(22, 31, 49, 0.125);
   border-color: var(--turquoise);
+}
+
+::placeholder {
+  /* color: var(--off-white); */
+  color: rgba(255, 255, 255, 0.55);
 }
 
 /* select {
